@@ -57,7 +57,6 @@ elif choice == "4":
 
     print("Duty deleted successfully!")
 
-
 elif choice == "5":
 
     name = input("Enter Officer Name: ")

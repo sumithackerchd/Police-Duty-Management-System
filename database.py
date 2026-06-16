@@ -41,6 +41,8 @@ def view_duties():
     conn.close()
 
     return duties
+
+
 def update_duty(duty_id, officer_name, duty_location, duty_date):
     conn = sqlite3.connect("duty.db")
     cursor = conn.cursor()
@@ -66,7 +68,9 @@ def delete_duty(duty_id):
 
     conn.commit()
     conn.close()
-    def search_officer(name):
+
+
+def search_officer(name):
     conn = sqlite3.connect("duty.db")
     cursor = conn.cursor()
 
