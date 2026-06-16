@@ -9,65 +9,73 @@ from database import (
 
 create_database()
 
-print("===== Police Duty Management System =====")
+while True:
 
-print("1. Add Duty")
-print("2. View Duties")
-print("3. Update Duty")
-print("4. Delete Duty")
-print("5. Search Officer")
+    print("\n===== Police Duty Management System =====")
 
-choice = input("Enter Choice: ")
+    print("1. Add Duty")
+    print("2. View Duties")
+    print("3. Update Duty")
+    print("4. Delete Duty")
+    print("5. Search Officer")
+    print("6. Exit")
 
-if choice == "1":
+    choice = input("Enter Choice: ")
 
-    name = input("Enter Officer Name: ")
-    location = input("Enter Duty Location: ")
-    date = input("Enter Duty Date (DD-MM-YYYY): ")
+    if choice == "1":
 
-    add_duty(name, location, date)
+        name = input("Enter Officer Name: ")
+        location = input("Enter Duty Location: ")
+        date = input("Enter Duty Date (DD-MM-YYYY): ")
 
-    print("Duty added successfully!")
+        add_duty(name, location, date)
 
-elif choice == "2":
+        print("Duty added successfully!")
 
-    duties = view_duties()
+    elif choice == "2":
 
-    print("\n===== Duty Records =====")
+        duties = view_duties()
 
-    for duty in duties:
-        print(duty)
+        print("\n===== Duty Records =====")
 
-elif choice == "3":
+        for duty in duties:
+            print(duty)
 
-    duty_id = int(input("Enter Duty ID: "))
-    name = input("New Officer Name: ")
-    location = input("New Duty Location: ")
-    date = input("New Duty Date: ")
+    elif choice == "3":
 
-    update_duty(duty_id, name, location, date)
+        duty_id = int(input("Enter Duty ID: "))
+        name = input("New Officer Name: ")
+        location = input("New Duty Location: ")
+        date = input("New Duty Date: ")
 
-    print("Duty updated successfully!")
+        update_duty(duty_id, name, location, date)
 
-elif choice == "4":
+        print("Duty updated successfully!")
 
-    duty_id = int(input("Enter Duty ID to delete: "))
+    elif choice == "4":
 
-    delete_duty(duty_id)
+        duty_id = int(input("Enter Duty ID to delete: "))
 
-    print("Duty deleted successfully!")
+        delete_duty(duty_id)
 
-elif choice == "5":
+        print("Duty deleted successfully!")
 
-    name = input("Enter Officer Name: ")
+    elif choice == "5":
 
-    results = search_officer(name)
+        name = input("Enter Officer Name: ")
 
-    print("\n===== Search Results =====")
+        results = search_officer(name)
 
-    for officer in results:
-        print(officer)
+        print("\n===== Search Results =====")
 
-else:
+        for officer in results:
+            print(officer)
 
-    print("Invalid Choice")
+    elif choice == "6":
+
+        print("Exiting System...")
+        break
+
+    else:
+
+        print("Invalid Choice")
